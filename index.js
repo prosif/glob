@@ -95,16 +95,16 @@ const writeOutput = (entries, outDir) => {
             // lol this sucks
             const fileExtension = entry.imagePath.split('.')[entry.imagePath.split('.').length - 1]; 
             fs.copyFileSync(entry.imagePath, path.join(outDir, `${i + 1}.${fileExtension}`));
-            imageDiv = `<img src="/${i + 1}.${fileExtension}"></img>`;
+            imageDiv = `<div id="image"><img src="/${i + 1}.${fileExtension}"></img></div>`;
         }
 
-        const prevLink = i === 0 ? '' : `<a href="/${i}.html">${i}</a>`;
-        const nextLink = i === entries.length - 1 ? '' : `<a href="/${i + 2}.html">${i + 2}</a>`;
+        const prevLink = i === 0 ? '' : `<a class='prev' href="/${i}.html">${i} - ${entries[i - 1].entry}</a>`;
+        const nextLink = i === entries.length - 1 ? '' : `<a class='next' href="/${i + 2}.html">${i + 2} - ${entries[i + 1].entry}</a>`;
 
         const createdText = `Created ${new Date(entry.info.birthtimeMs).toUTCString()}`;
         const updatedText = `Last updated ${new Date(entry.info.mtimeMs).toUTCString()}`;
 
-        const meta = `<div>${createdText}${updatedText}</div>`;
+        const meta = `<div><div><strong>${createdText}</strong></div><div><strong>${updatedText}</strong></div></div>`;
 
         const links = `<div>${prevLink}${nextLink}</div>`;
 

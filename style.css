@@ -1,4 +1,38 @@
 body {
-    margin: 0;
-    background: red;
+    background: rgba(254,249,244, 255);
+    font-size: calc(1.25em + 1.5vmin);
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+    clear: both;
+}
+
+#image {
+    text-align: center;
+}
+
+img {
+    max-height: 320px;
+}
+
+p {
+    font-family: serif;
+}
+
+a:hover, a:visited {
+    color: black;
+}
+
+a.prev {
+    float: left;
+}
+
+a.next {
+    float: right;
+}
+
+strong {
+    font-size: calc(.5em + 1vmin);
 }
